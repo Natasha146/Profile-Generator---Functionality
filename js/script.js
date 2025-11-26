@@ -1,32 +1,54 @@
-var namebox= document.getElementById('nameInput');
-console.log(namebox);
+var namebox = document.getElementById('nameInput');
+//console.log(namebox);
 
-var nameAge= document.getElementById('ageInput');
-console.log(nameAge);
+var nameAge = document.getElementById('ageInput');
+//console.log(nameAge);
 
 
-var favColor= document.getElementById('colorInput');
-console.log(favColor);
+var favColor = document.getElementById('colorInput');
+//console.log(favColor);
 
-var favPet = document.querySelectorAll("input[type='radio']");
-console.log(favPet);
+var pet = document.querySelectorAll("input[type='radio']");
+//console.log(pet);
 
-var hobbies= document.querySelectorAll("input[type='checkbox']");
-console.log(hobbies);
+var hobby = document.querySelectorAll("input[type='checkbox']");
+//console.log(hobbies);
 
-var button= document.getElementById('submitBtn');
-console.log(button);
+var button = document.getElementById('submitBtn');
+//console.log(button);
 
-button.addEventListener("click",info);
+button.addEventListener("click", info);
 
-function info(){
-    outPut.innerHTML=namebox.value +" "+ nameAge.value +" "+ favColor.value;
-    console.log(nameAge.value);
-     console.log(favColor.value);
-     
+let favPet;
+let hobbies= [];
+
+function info() {
+    outPut.innerHTML = namebox.value + " " + nameAge.value + " " + favColor.value ;
+    //console.log(nameAge.value);
+    //console.log(favColor.value);
+hobbies = [];
+
+//check for pets 
+    for (let i = 0; i < pet.length; i++) {
+        if (pet[i].checked) {
+            favPet = pet[i].value;
+        }
+    }
+    console.log(favPet);
+
+    //check hobbies
+    for (let i = 0; i < hobby.length; i++){
+        if (hobby[i].checked){
+            hobbies.push(" " + hobby[i].value);
+        }
+    }
+
+    console.log(hobbies);
+
+
 }
 
-var outPut= document.getElementById('output');
-console.log(outPut);
+var outPut = document.getElementById('output');
+//console.log(outPut);
 
-const element= document.getElementById('mybtn');
+const element = document.getElementById('mybtn');
